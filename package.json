@@ -2,10 +2,12 @@
   "name": "x-is-equal",
   "version": "1.0.1",
   "description": "Check equality of multiple values/objects/arrays",
+  "author": "Vincent Sjögren",
+  "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
-  "module": "./dist/index.m.js",
+  "module": "./dist/index.mjs",
   "umd:main": "./dist/index.umd.js",
   "exports": {
     "require": "./dist/index.cjs",
@@ -26,17 +28,10 @@
     "cjs",
     "esm"
   ],
-  "author": "Vincent Sjögren",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vinsjo/is-equal/issues"
-  },
-  "homepage": "https://github.com/vinsjo/is-equal#readme",
   "devDependencies": {
-    "microbundle": "^0.15.1",
-    "prettier": "^2.7.1"
+    "microbundle": "latest"
   },
   "dependencies": {
-    "x-is-type": "^1.0.10"
+    "x-is-type": "latest"
   }
 }
