@@ -1,0 +1,41 @@
+{
+  "name": "@vinsjo/is-equal",
+  "version": "1.0.0",
+  "description": "Check equality of multiple values/objects/arrays",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.m.js",
+  "umd:main": "./dist/index.umd.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinsjo/is-equal.git"
+  },
+  "keywords": [
+    "equality",
+    "cjs",
+    "esm"
+  ],
+  "author": "Vincent Sjögren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinsjo/is-equal/issues"
+  },
+  "homepage": "https://github.com/vinsjo/is-equal#readme",
+  "dependencies": {
+    "x-is-type": "^1.0.9"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
+}
