@@ -13,10 +13,15 @@ function createEqualityChecker(
 		if (typeof validateArgsFn === 'function' && !validateArgsFn(...args)) {
 			return false;
 		}
-		const comparer =
-			typeof argsComparerFn === 'function'
-				? argsComparerFn
-				: (a: any, b: any) => a === b;
+		const comparer = (a: any, b: any) => {
+			if (a === b) return true;
+			return typeof argsComparerFn === 'function'
+				? argsComparerFn(a, b)
+				: false;
+		};
+		typeof argsComparerFn === 'function'
+			? argsComparerFn
+			: (a: any, b: any) => a === b;
 		for (let i = 1; i < args.length; i++) {
 			const a = args[i - 1],
 				b = args[i];
@@ -56,10 +61,14 @@ function isEqualArr(...args: any[]): boolean {
  * Determine if multiple objects contain equal values recursively
  */
 function isEqualObj(...args: any[]): boolean {
+	const nonCircularKeys = (obj: Object) => {
+		const keys = Object.keys(obj);
+		return keys.filter((key) => obj[key] !== obj);
+	};
 	return createEqualityChecker(
 		(...args) => isObj(...args) && isEqualConstructor(...args),
 		(a: Object, b: Object) => {
-			const keys = { a: Object.keys(a), b: Object.keys(b) };
+			const keys = { a: nonCircularKeys(a), b: nonCircularKeys(b) };
 			if (keys.a.length !== keys.b.length) return false;
 			for (const key of keys.a) {
 				if (a[key] === b[key]) continue;
