@@ -1,6 +1,6 @@
 {
   "name": "x-is-equal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check equality of multiple values/objects/arrays",
   "type": "module",
   "source": "./src/index.ts",
