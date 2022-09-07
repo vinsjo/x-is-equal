@@ -6,21 +6,22 @@
   "license": "MIT",
   "type": "module",
   "source": "./src/index.ts",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
   "umd:main": "./dist/index.umd.js",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.umd.js"
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.modern.js"
     }
   },
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "prepublishOnly": "npx browserslist@latest --update-db -y && npm run build"
+    "update-browserlist": "npx browserslist@latest --update-db -y",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
