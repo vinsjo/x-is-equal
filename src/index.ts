@@ -39,7 +39,7 @@ const isEqualConstructor = createEqualityChecker(
 
 const isEqualDate = createEqualityChecker(
 	isDate,
-	(a, b) => Number(a) === Number(b)
+	(a: Date, b: Date) => a.getTime() === b.getTime()
 );
 
 /**
