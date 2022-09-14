@@ -20,9 +20,13 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "update-browserlist": "npx browserslist@latest --update-db -y",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint": "npx eslint src --ext .ts"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vinsjo/x-is-equal.git"
@@ -33,6 +37,9 @@
     "esm"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
     "microbundle": "latest"
   },
   "dependencies": {
