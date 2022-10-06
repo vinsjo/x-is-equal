@@ -1,6 +1,6 @@
 {
     "name": "x-is-equal",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Check equality of multiple values/objects/arrays",
     "author": "Vincent Sjögren",
     "license": "MIT",
