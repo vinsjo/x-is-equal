@@ -1,48 +1,52 @@
 {
-  "name": "x-is-equal",
-  "version": "1.0.5",
-  "description": "Check equality of multiple values/objects/arrays",
-  "author": "Vincent Sjögren",
-  "license": "MIT",
-  "type": "module",
-  "source": "./src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.esm.js",
-  "umd:main": "./dist/index.umd.js",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.esm.js",
-      "default": "./dist/index.modern.js"
+    "name": "x-is-equal",
+    "version": "1.0.5",
+    "description": "Check equality of multiple values/objects/arrays",
+    "author": "Vincent Sjögren",
+    "license": "MIT",
+    "type": "module",
+    "source": "./src/index.ts",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.esm.js",
+    "umd:main": "./dist/index.umd.js",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.esm.js",
+            "default": "./dist/index.modern.js"
+        }
+    },
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "microbundle",
+        "dev": "microbundle watch",
+        "prepublishOnly": "npm run build",
+        "lint": "npx eslint src --ext .ts",
+        "prepare": "husky install"
+    },
+    "files": [
+        "src",
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vinsjo/x-is-equal.git"
+    },
+    "keywords": [
+        "equality",
+        "cjs",
+        "esm"
+    ],
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.37.0",
+        "@typescript-eslint/parser": "^5.37.0",
+        "eslint": "^8.23.1",
+        "husky": "^8.0.0",
+        "microbundle": "latest",
+        "prettier": "^2.7.1",
+        "pretty-quick": "^3.1.3"
+    },
+    "dependencies": {
+        "x-is-type": "latest"
     }
-  },
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch",
-    "prepublishOnly": "npm run build",
-    "lint": "npx eslint src --ext .ts"
-  },
-  "files": [
-    "src",
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vinsjo/x-is-equal.git"
-  },
-  "keywords": [
-    "equality",
-    "cjs",
-    "esm"
-  ],
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "eslint": "^8.23.1",
-    "microbundle": "latest"
-  },
-  "dependencies": {
-    "x-is-type": "latest"
-  }
 }
