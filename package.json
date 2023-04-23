@@ -16,11 +16,12 @@
     "default": "./dist/index.modern.js"
   },
   "scripts": {
-    "build": "del-cli dist && microbundle src/index.ts --compress --no-sourcemap",
+    "build": "del-cli dist && microbundle --compress --no-sourcemap --strict && npm run test:build",
     "dev": "microbundle watch",
     "lint": "eslint src/** __tests__/** --ext .ts",
     "format": "prettier --write .",
-    "test": "jest",
+    "test": "jest index",
+    "test:build": "jest build",
     "test:coverage": "jest --coverage",
     "pre-commit": "npm test && pretty-quick --staged",
     "pre-push": "npm test && npm run lint",
